@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+            <form class="form-signin">
+              <div class="form-label-group">
+                <input type="text" name="search" id="search" [(ngModel)] = "searchText"  class="form-control" placeholder="Search" required="" autofocus="">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+      <br>
+      <div class="table table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Position</th>
+              <th scope="col">Department</th>
+              <th scope="col">HP Number</th>
+              <th scope="col">Sisco Number</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <div *ngIf="(kontak | filter : searchText) ?.length==0">No Data Result</div>
+          <tbody>
+            <tr *ngFor="let kon of kontak | filter : searchText">
+                <td scope="row">{{kon.nama}}</td>
+                <td scope="row">{{kon.jabatan}}</td>
+                <td scope="row">{{kon.departemen}}</td>
+                <td scope="row">{{kon.no_hp}}</td>
+                <td scope="row">{{kon.no_sisco}}</td>
+                <td scope="row"> 
+                    <a style="margin-right:10px" class="btn btn-success" routerLink="/edit/{{kon.id}}">
+                      <span class="glyphicon glyphicon-edit">Edit</span>
+                    </a>
+                    <a class="btn btn-danger" (click)="deleteKontak(kon.id)">
+                      <span class="glyphicon glyphicon-trash">Delete</span>
+                    </a>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

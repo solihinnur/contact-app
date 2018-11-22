@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container">
+ <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="text-center mb-4">
+          <img class="mb-4" src="../../../assets/img/logo.png" alt="" width="200" height="200">
+          <h1 class="h3 mb-3 font-weight-normal">Search Contacts</h1>
+        </div>
+
+        <div class="form-label-group">
+          <input type="text" [(ngModel)]="nama" class="form-control" placeholder="Search By Name" autofocus="" required>
+        </div>
+        <br>
+          <a class="btn btn-sm btn-block btn-outline-primary" routerLink="/search/{{nama}}">Search Contacts</a>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+

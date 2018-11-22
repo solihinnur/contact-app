@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>INPUT DATA CONTACT</h3>
+                <form name="form" (ngSubmit)="f.form.valid && addKontak()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="nama">Name</label>
+                        <input type="text" class="form-control" name="nama" [(ngModel)]="model.nama" 
+                        #nama="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nama.invalid }" required />
+                        <div *ngIf="f.submitted && nama.invalid" class="invalid-feedback">
+                            <div *ngIf="nama.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Position</label>
+                        <input type="text" class="form-control" name="jabatan" [(ngModel)]="model.jabatan"  
+                        #jabatan="ngModel" [ngClass]="{ 'is-invalid': f.submitted && jabatan.invalid }" required />
+                        <div *ngIf="f.submitted && jabatan.invalid" class="invalid-feedback">
+                            <div *ngIf="jabatan.errors.required">Position is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="departemen">Department</label>
+                      <input type="text" class="form-control" name="departemen" [(ngModel)]="model.departemen"  
+                      #departemen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && departemen.invalid }" required />
+                      <div *ngIf="f.submitted && departemen.invalid" class="invalid-feedback">
+                          <div *ngIf="departemen.errors.required">Department is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="no_hp">HP Number</label>
+                    <input type="text" class="form-control" name="no_hp" [(ngModel)]="model.no_hp"  
+                    #no_hp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && no_hp.invalid }" required />
+                    <div *ngIf="f.submitted && no_hp.invalid" class="invalid-feedback">
+                        <div *ngIf="no_hp.errors.required">HP Number is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="no_sisco">Sisco Number</label>
+                  <input type="text" class="form-control" name="no_sisco" [(ngModel)]="model.no_sisco"  
+                  #no_sisco="ngModel" [ngClass]="{ 'is-invalid': f.submitted && no_sisco.invalid }" required />
+                  <div *ngIf="f.submitted && no_sisco.invalid" class="invalid-feedback">
+                      <div *ngIf="no_sisco.errors.required">Sisco Number is required</div>
+                  </div>
+              </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a style="margin-left: 10px;" class="btn btn-danger" (click)="goBack()">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  
+  

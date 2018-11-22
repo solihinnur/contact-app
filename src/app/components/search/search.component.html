@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">CONTACT LIST</div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Position</th>
+              <th scope="col">Department</th>
+              <th scope="col">HP Number</th>
+              <th scope="col">Sisco Number</th>
+            </tr>
+          </thead>
+          <div *ngIf="kontak.length==0">No Data Result</div>
+          <tbody>
+            <tr *ngFor="let kon of kontak">
+                <td scope="row">{{kon.nama}}</td>
+                <td scope="row">{{kon.jabatan}}</td>
+                <td scope="row">{{kon.departemen}}</td>
+                <td scope="row">{{kon.no_hp}}</td>
+                <td scope="row">{{kon.no_sisco}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+</div>
