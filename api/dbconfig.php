@@ -4,6 +4,6 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dbcontact";
+$dbname = "dbcontat";
 $conn = new mysqli($servername, $username, $password, $dbname);
 ?>
